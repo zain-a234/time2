@@ -78,7 +78,8 @@ class ClassView(APIView):
                    'course ':output.course ,
                    'duration':output.duration,
                    'group ':output.group,
-                   'lab':output.lab}
+                   'lab':output.lab,
+                  'session':output.session}
                   for output in Class.objects.all()]
         return Response(output)
     

@@ -25,5 +25,6 @@ urlpatterns = [
     path('Course/' ,CourseView.as_view(),name='course' ),
     path('Room/',RoomView.as_view(),name='room'),
     path('group/',GroupView.as_view(),name='group'),
-    path('calss/',ClassView.as_view(),name='class')
+    path('calss/',ClassView.as_view(),name='class'),
+    path('yearstudent/',Year_studentView.as_view(),name='yearstudent'),
 ]

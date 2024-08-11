@@ -18,7 +18,7 @@ class Professor(models.Model):
 class Course(models.Model):
     name = models.CharField(max_length=100)
     year = models.CharField(max_length=100)
-    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    professor = models.CharField(max_length=100)
     session = models.CharField(max_length=100)
     Mr = models.CharField(max_length=100)
     duration = models.IntegerField()

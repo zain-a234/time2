@@ -17,6 +17,13 @@ class Professor(models.Model):
 ##########################################################################
 class Course(models.Model):
     name = models.CharField(max_length=100)
+    year = models.CharField(max_length=100)
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    session = models.CharField(max_length=100)
+    Mr = models.CharField(max_length=100)
+    duration = models.IntegerField()
+
+
 
     def __str__(self):
         return self.name

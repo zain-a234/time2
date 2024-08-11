@@ -40,10 +40,7 @@ class CourseView(APIView):
 
 class RoomView(APIView):
     def get(self,request):
-        output = [{'name':output.name,
-                   'number_of_student':output.number_of_student,
-                   'lab':output.lab,
-                   'size':output.size}
+        output = [{'name':output.name}
                   for output in Room.objects.all()]
         return Response(output)
     

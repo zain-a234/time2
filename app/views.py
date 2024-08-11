@@ -22,10 +22,13 @@ class ProfessorView(APIView):
             serializer.save()
             return Response(serializer.data)
 ##################################################################3
-
 class CourseView(APIView):
     def get(self,request):
-        output = [{'name':output.name}
+        output = [{'name':output.name,
+                   'year':output.year,
+                   'professor':output.professor,
+                   'Mr':output.Mr,
+                   'duration':output.duration}
                   for output in Course.objects.all()]
         return Response(output)
     

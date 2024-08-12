@@ -97,8 +97,8 @@ DATABASES = {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'time',
     'USER': 'time_owner',
-    'PASSWORD': 'RPl9Fk7sxCeS',
-    'HOST':'ep-restless-cloud-a5pdo2l8.us-east-2.aws.neon.tech',
+    'PASSWORD': 'g7SqxuEGs6Pw',
+    'HOST':'ep-proud-salad-a5wxbc23.us-east-2.aws.neon.tech',
     'PORT': '5432',
     'OPTIONS': {
       'sslmode': 'require',

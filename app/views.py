@@ -110,7 +110,11 @@ class Year_studentView(APIView):
 class courseview2(APIView):
     def get(self,request):
         output = [{'name':output.name,
-                   'year':output.year}
+                   'year':output.year,
+                    'professor':output.professor,
+                   'session':output.session,
+                   'Mr':output.Mr,
+                   'duration':output.duration}
                   for output in Course.objects.all()]
         return Response(output)
     

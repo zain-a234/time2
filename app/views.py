@@ -95,14 +95,8 @@ class ClassView(APIView):
 class Year_studentView(APIView):
     def get(self,request):
         output = [{'name_collage':output.name_collage,
-                   'current_year ':output.current_year,
-                   'year_of_student':output.year_of_student,
-                   'number_of_days ':output.number_of_days,
-                   'number_of_first_session_student':output.number_of_first_session_student,
-                   'number_of_first_session_category':output.number_of_first_session_category ,
-                   'number_of_second_session_student':output.number_of_second_session_student,
-                   'number_of_second_session_category':output.number_of_second_session_category,
-                   'holiday':output.holiday,
+                   'current_year ':output.current_year
+
                    }
                   for output in Year_student.objects.all()]
         return Response(output)

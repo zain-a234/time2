@@ -101,4 +101,17 @@ class Group(models.Model):
 
 #########################################################################
 
-
+class Class(models.Model):
+    seesion_on_years= [
+        ('first', 'first'),
+        ('first', 'first'),
+    ]
+    professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    duration = models.IntegerField()
+    group = models.ForeignKey(Group, on_delete=models.CASCADE)
+    lab = models.BooleanField(default=False)
+    session =models.CharField(max_length=10, choices=seesion_on_years, null=False, blank=True) 
+    
+    def __str__(self):
+        return f"{self.course.name} by {self.professor.name}"

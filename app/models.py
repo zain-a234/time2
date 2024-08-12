@@ -20,7 +20,7 @@ class Course(models.Model):
     year = models.CharField(max_length=100)
     professor = models.CharField(max_length=100)
     session = models.CharField(max_length=100)
-    Mr = models.CharField(max_length=100)
+    Mr = models.CharField(max_length=100,default="fade")
     duration = models.IntegerField()
 
     def __str__(self):

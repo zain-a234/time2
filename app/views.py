@@ -114,6 +114,6 @@ class courseview2(APIView):
                    'professor':output.professor,
                    'Mr':output.Mr,
                    'duration':output.duration}
-                   for ouput in Course.object.all()]
+                   for ouptut in Course.objects.all()]
         return Response(output)
    

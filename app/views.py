@@ -7,40 +7,6 @@ from .serializer import ProfessorSerializer , CourseSerializer ,RoomSerializer,G
 from rest_framework.response import Response
 
 
-class ProfessorView(APIView):
-    def get(self,request):
-        output = [{'first_name':output.first_name,
-                   'last_name':output.last_name,
-                   'email':output.email,
-                   'p':output.p}
-                  for output in Professor.objects.all()]
-        return Response(output)
-    
-    def post(self,request):
-        serializer = ProfessorSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
-##################################################################3
-class CourseView(APIView):
-    def get(self,request):
-        output = [{'name':output.name,
-                   'year':output.year,
-                   'professor':output.professor,
-                   'Mr':output.Mr,
-                   'duration':output.duration}
-                  for output in Course.objects.all()]
-        return Response(output)
-    
-    def post(self,request):
-        serializer = CourseSerializer(data=request.data)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
-
-
-#######################################################################
-
 class RoomView(APIView):
     def get(self,request):
         output = [{'name':output.name}
@@ -55,6 +21,38 @@ class RoomView(APIView):
 
 
 #############################################################################
+
+
+class CourseView(APIView):
+    def get(self,request):
+        output = [{'name':output.name,
+                   'year':output.year}
+                  for output in Course.objects.all()]
+        return Response(output)
+    
+    def post(self,request):
+        serializer = CourseSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+
+
+#######################################################################
+class ProfessorView(APIView):
+    def get(self,request):
+        output = [{'first_name':output.first_name,
+                   'p':output.p}
+                  for output in Professor.objects.all()]
+        return Response(output)
+    
+    def post(self,request):
+        serializer = ProfessorSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
+##################################################################3
+
+
 
 class GroupView(APIView):
     def get(self,request):
@@ -79,7 +77,7 @@ class ClassView(APIView):
                    'duration':output.duration,
                    'group ':output.group,
                    'lab':output.lab,
-                  'session':output.session}
+                   'session':output.session}
                   for output in Class.objects.all()]
         return Response(output)
     

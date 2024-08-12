@@ -110,10 +110,13 @@ class Year_studentView(APIView):
 class courseview2(APIView):
     def get(self,request):
         output = [{'name':output.name,
-                   'year':output.year,
-                   'professor':output.professor,
-                   'Mr':output.Mr,
-                   'duration':output.duration}
-                   for ouptut in Course.objects.all()]
+                   'year':output.year}
+                  for output in Course.objects.all()]
         return Response(output)
+    
+    def post(self,request):
+        serializer = CourseSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)
    

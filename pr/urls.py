@@ -27,4 +27,5 @@ urlpatterns = [
     path('group/',GroupView.as_view(),name='group'),
     path('calss/',ClassView.as_view(),name='class'),
     path('yearstudent/',Year_studentView.as_view(),name='yearstudent'),
+    path('coursinfo/',courseview2.as_view(),name='courseinfo'),
 ]

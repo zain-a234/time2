@@ -41,7 +41,11 @@ class CourseView(APIView):
 class ProfessorView(APIView):
     def get(self,request):
         output = [{'first_name':output.first_name,
-                   'p':output.p}
+                   'last_name':output.last_name,
+                   'email':output.email,
+                   'email_second':output.email_second,
+                   'password':output.password
+                   }
                   for output in Professor.objects.all()]
         return Response(output)
     
